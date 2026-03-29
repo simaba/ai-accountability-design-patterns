@@ -1,0 +1,9 @@
+flowchart TD
+    A[AI system event] --> B{Threshold exceeded?}
+    B -- No --> C[Continue monitoring]
+    B -- Yes --> D[Escalate to accountable owner]
+    D --> E{Human override needed?}
+    E -- No --> F[Continue with compensating control]
+    E -- Yes --> G[Fallback or disablement]
+    G --> H[Incident log and review]
+    F --> H
