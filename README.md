@@ -1,40 +1,98 @@
 # AI Accountability Design Patterns
 
-A practical pattern library for designing human accountability into AI-enabled systems.
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Last Commit](https://img.shields.io/github/last-commit/simaba/ai-accountability-design-patterns)](https://github.com/simaba/ai-accountability-design-patterns/commits/main)
 
-## Why this repository exists
+A practical pattern library for designing human accountability into AI-enabled systems — covering escalation logic, ownership models, and intervention paths.
 
-AI systems often fail operationally not only because of model behavior, but because:
-- escalation logic is vague,
-- ownership is fragmented,
-- humans are nominally "in the loop" but lack authority,
-- override paths are under-specified.
+---
 
-This repository collects reusable accountability design patterns for regulated, enterprise, and safety-adjacent environments.
+## Why this exists
 
-## Contents
+AI systems often fail operationally not only because of model behaviour, but because:
 
-- `patterns/human-override.md`
-- `patterns/escalation-thresholds.md`
-- `patterns/ownership-models.md`
-- `patterns/decision-context.md`
-- `patterns/incident-accountability.md`
-- `diagrams/accountability-flow.mmd`
-- `examples/customer-support-agent.md`
-- `examples/ivi-assistant.md`
-- `templates/accountability-review-checklist.md`
+- escalation logic is vague or missing
+- ownership is fragmented across teams
+- humans are nominally "in the loop" but lack real authority
+- override paths are under-specified or untested
 
-## Intended audience
+---
 
-- AI product managers
-- platform and systems engineers
-- governance and risk leaders
-- operations and quality teams
+## Core design principle
 
-## Design principle
+```mermaid
+flowchart TD
+    A[AI system output] --> B{Intervention
+conditions met?}
+    B -->|No| C[Output delivered]
+    B -->|Yes| D[Human notified
+with context]
+    D --> E{Authority to
+intervene?}
+    E -->|Yes| F[Human overrides
+or confirms]
+    E -->|No| G[Escalate to
+authorised party]
+    F & G --> H[Decision logged
+and reviewable]
+```
 
-Human oversight is only meaningful when:
-- intervention conditions are explicit,
-- authority is real,
-- context is sufficient,
-- decisions are logged and reviewable.
+> Human oversight is only meaningful when: intervention conditions are explicit, authority is real, context is sufficient, and decisions are logged and reviewable.
+
+---
+
+## Patterns included
+
+| Pattern | What it addresses |
+|---------|-----------------|
+| `patterns/human-override.md` | When and how humans can override AI decisions |
+| `patterns/escalation-thresholds.md` | Defining triggers for human escalation |
+| `patterns/ownership-models.md` | Assigning clear operational ownership |
+| `patterns/decision-context.md` | Ensuring humans have sufficient context to act |
+| `patterns/incident-accountability.md` | Post-incident ownership and review |
+
+---
+
+## Worked examples
+
+| Example | Industry context |
+|---------|----------------|
+| `examples/customer-support-agent.md` | AI-assisted customer service with override path |
+| `examples/ivi-assistant.md` | In-vehicle AI assistant with safety escalation |
+
+---
+
+## Templates
+
+- `templates/accountability-review-checklist.md` — review checklist for new AI deployments
+
+---
+
+## Who this is for
+
+- AI product managers designing human-in-the-loop systems
+- Platform and systems engineers implementing escalation logic
+- Governance and risk leaders in regulated industries
+- Operations and quality teams accountable for AI outcomes
+
+---
+
+## Related repositories
+
+This repository is part of a connected toolkit for responsible AI operations:
+
+| Repository | Purpose |
+|-----------|---------|
+| [Enterprise AI Governance Playbook](https://github.com/simaba/enterprise-ai-governance-playbook) | End-to-end AI operating model from intake to improvement |
+| [AI Release Governance Framework](https://github.com/simaba/ai-release-governance-framework) | Risk-based release gates for AI systems |
+| [AI Release Readiness Checklist](https://github.com/simaba/ai-release-readiness-checklist) | Risk-tiered pre-release checklists with CLI tool |
+| [AI Accountability Design Patterns](https://github.com/simaba/ai-accountability-design-patterns) | Patterns for human oversight and escalation |
+| [Multi-Agent Governance Framework](https://github.com/simaba/multi-agent-governance-framework) | Roles, authority, and escalation for agent systems |
+| [Multi-Agent Orchestration Patterns](https://github.com/simaba/multi-agent-orchestration-patterns) | Sequential, parallel, and feedback-loop patterns |
+| [AI Agent Evaluation Framework](https://github.com/simaba/ai-agent-evaluation-framework) | System-level evaluation across 5 dimensions |
+| [Agent System Simulator](https://github.com/simaba/agent-system-simulator) | Runnable multi-agent simulator with governance controls |
+| [LLM-powered Lean Six Sigma](https://github.com/simaba/LLM-powered-Lean-Six-Sigma) | AI copilot for structured process improvement |
+
+---
+
+*Shared in a personal capacity. Open to collaborations and feedback — connect on [LinkedIn](https://linkedin.com/in/simaba) or [Medium](https://medium.com/@bagheri.sima).*
