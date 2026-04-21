@@ -13,12 +13,10 @@ and mapping to NIST AI RMF and EU AI Act requirements.
 ## What Is AI Accountability?
 
 AI accountability means that individuals and organizations can be held responsible
-for the outcomes of AI systems — that there are clear lines of ownership, transparent
+for the outcomes of AI systems, that there are clear lines of ownership, transparent
 decision processes, and mechanisms for redress when things go wrong.
 
-The NIST AI RMF defines accountability as one of seven characteristics of trustworthy AI:
-> *"AI actors should be accountable for the development, deployment, and impacts of AI
-> systems, including supporting human oversight."*
+The NIST AI RMF defines accountability as one of the characteristics of trustworthy AI.
 
 ---
 
@@ -30,7 +28,7 @@ The NIST AI RMF defines accountability as one of seven characteristics of trustw
 |---|---|---|
 | **Model Inventory** | No central registry of AI systems in production | Maintain a versioned, owner-assigned inventory of all deployed models |
 | **Ownership Assignment** | Unclear who is responsible when an AI system fails | Assign a named technical owner and business owner to every AI system |
-| **AI Policy Cascade** | Governance policies not reaching practitioners | Publish policy as code — embed governance rules in CI/CD pipelines |
+| **AI Policy Cascade** | Governance policies not reaching practitioners | Publish policy as code and embed governance rules in CI/CD pipelines |
 | **Governance Gate** | AI systems deployed without appropriate review | Require signed-off checklists at defined lifecycle milestones |
 
 ### Transparency Patterns
@@ -49,7 +47,7 @@ The NIST AI RMF defines accountability as one of seven characteristics of trustw
 | **Human-in-the-Loop Gate** | High-stakes decisions made autonomously | Require human review before action for decisions above a risk threshold |
 | **Override Mechanism** | Operators cannot override erroneous AI decisions | Implement a documented, audited override pathway with reason capture |
 | **Escalation Ladder** | Edge cases fall through without review | Define a tiered escalation path for low-confidence or novel inputs |
-| **Sunset Clause** | Models remain in production past their useful life | Set mandatory model review dates; require affirmative renewal to continue |
+| **Sunset Clause** | Models remain in production past their useful life | Set mandatory model review dates and require affirmative renewal to continue |
 
 ### Redress Patterns
 
@@ -57,7 +55,7 @@ The NIST AI RMF defines accountability as one of seven characteristics of trustw
 |---|---|---|
 | **Adverse Action Explanation** | Affected individuals cannot understand why they were denied | Generate plain-language explanations with specific contributing factors |
 | **Appeal Pathway** | No mechanism for contesting AI decisions | Implement a formal appeal process with human review and documented outcomes |
-| **Impact Audit** | Unknown whether AI system is causing disproportionate harm | Conduct regular disparate impact audits by protected characteristics |
+| **Impact Audit** | Unknown whether an AI system is causing disproportionate harm | Conduct regular disparate impact audits by protected characteristics |
 
 ---
 
@@ -72,10 +70,10 @@ pattern to NIST AI RMF functions and subcategories.
 
 | Repository | Purpose |
 |---|---|
-| [enterprise-ai-governance-playbook](https://github.com/simaba/governance-playbook) | End-to-end governance playbook |
-| [ai-release-readiness-checklist](https://github.com/simaba/release-checklist) | Release gate framework + CLI |
-| [ai-risk-taxonomy](https://github.com/simaba/ai-risk-taxonomy) | Structured AI risk taxonomy |
-| [nist-ai-rmf-implementation-guide](https://github.com/simaba/nist-rmf-guide) | NIST AI RMF practitioner guide |
-| [awesome-ai-governance](https://github.com/simaba/ai-prism) | Curated governance resources |
+| [governance-playbook](https://github.com/simaba/governance-playbook) | End-to-end governance playbook |
+| [release-checklist](https://github.com/simaba/release-checklist) | Release gate framework and CLI |
+| [release-governance](https://github.com/simaba/release-governance) | Lifecycle governance for AI releases |
+| [nist-rmf-guide](https://github.com/simaba/nist-rmf-guide) | NIST AI RMF practitioner guide |
+| [ai-prism](https://github.com/simaba/ai-prism) | Curated governance resources |
 
 *Maintained by [Sima Bagheri](https://github.com/simaba) · Connect on [LinkedIn](https://www.linkedin.com/in/simaba/)*
